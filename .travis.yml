@@ -16,4 +16,4 @@ install:
   - pip install pylint
 script:
   - python -m pytest
-  - pylint
+  - pylint -E .
