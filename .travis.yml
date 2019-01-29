@@ -13,5 +13,7 @@ matrix:
 install:
   - if [[ $TRAVIS_PYTHON_VERSION == '2.7' ]]; then travis_retry pip install -r requirements_python2.txt; fi
   - if [[ $TRAVIS_PYTHON_VERSION == '3'* ]]; then travis_retry pip3 install -r requirements_python3.txt; fi
+  - pip install pylint
 script:
   - python -m pytest
+  - pylint
