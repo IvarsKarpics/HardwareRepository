@@ -38,8 +38,6 @@ test_object = TestHardwareObjectBase.test_object
 class TestAbstractActuatorBase(TestHardwareObjectBase.TestHardwareObjectBase):
     """Tests for AbstractActuator subclasses"""
 
-    __metaclass__ = abc.ABCMeta
-
     def test_initial_value(self, test_object):
         """Test initial and default values for newly loaded object"""
         startval = test_object.get_value()
