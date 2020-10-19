@@ -116,4 +116,4 @@ class AbstractNState(AbstractActuator):
         # One would normally call super(AbstractNState ...), however we want to call
         # re_emit_values of HardwareObject to avoid the limit handling implemented in
         # AbstractActuator
-        super(AbstractActuator, self).re_emit_values()
+        # super(AbstractActuator, self).re_emit_values()

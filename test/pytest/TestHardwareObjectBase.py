@@ -45,19 +45,17 @@ def test_object(beamline):
 class TestHardwareObjectBase:
     """Tests for HardwareObjectMixin subclasses"""
 
+    __metaclass__ = abc.ABCMeta
+
     def tets_state_getting(self, test_object):
         """Test that get_state reflects _state"""
 
-        return
+        test_object._state = test_object.STATES.BUSY
+        assert test_object.get_state() is test_object.STATES.BUSY, (
+            "Setting %s._state is not reflected in get_state()"
+            % test_object.__class__.__name__
+        )
 
-        # test_object._state = test_object.STATES.BUSY
-        # assert test_object.get_state() is test_object.STATES.BUSY, (
-        #    "Setting %s._state is not reflected in get_state()"
-        #    % test_object.__class__.__name__
-        # )
-
-
-'''
     def test_state_enumeration(self, test_object):
         """Test that STATES match HardwareObjectState"""
 
@@ -128,4 +126,3 @@ class SignalCatcher(object):
 
     def catch(self, value):
         self.async_result.set(value)
-'''
