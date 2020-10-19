@@ -23,6 +23,7 @@ __license__ = "LGPLv3+"
 
 
 import logging
+import importlib
 import xml.sax
 from xml.sax.handler import ContentHandler
 
@@ -88,7 +89,8 @@ def load_module(hardware_object_name):
     Returns:
         [type]: [description]
     """
-    return __import__(hardware_object_name, globals(), locals(), [""])
+    print(hardware_object_name)
+    return importlib.import_module(hardware_object_name)
 
 
 def instanciate_class(module_name, class_name, object_name):
